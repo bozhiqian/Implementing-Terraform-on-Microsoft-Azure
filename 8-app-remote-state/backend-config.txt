@@ -1,0 +1,4 @@
+storage_account_name = "appitma50311"
+container_name = "terraform-state"
+key = "terraform.tfstate"
+sas_token = "?sv=2017-07-29&ss=b&srt=sco&sp=rwdlac&se=2022-12-06T04:56:53Z&st=2020-12-06T04:56:53Z&spr=https&sig=K5mrG1BmPA7qu%2FkLzYj%2BFkZBLuECEmHFLhcdXsZO1Vw%3D"

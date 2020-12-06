@@ -17,7 +17,7 @@ variable "vnet_cidr_range" {
   default = {
     development = "10.2.0.0/16"
     uat         = "10.3.0.0/16"
-    production        = "10.4.0.0/16"
+    production  = "10.4.0.0/16"
   }
 }
 
@@ -50,6 +50,15 @@ data "template_file" "subnet_prefixes" {
   vars = {
     vnet_cidr     = var.vnet_cidr_range[terraform.workspace]
     current_count = count.index
+  }
+}
+
+resource "azurerm_resource_group" "main" {
+  name     = local.full_rg_name
+  location = var.location
+
+  tags = {
+    environment = terraform.workspace
   }
 }
 

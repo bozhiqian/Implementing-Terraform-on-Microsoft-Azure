@@ -1,0 +1,2 @@
+$subnetref = az network vnet subnet list --resource-group BoomDemo --vnet-name boom-vnet --query "[?name=='boom-subnet'].id"
+

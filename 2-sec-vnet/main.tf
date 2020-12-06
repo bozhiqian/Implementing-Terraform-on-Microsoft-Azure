@@ -38,7 +38,7 @@ data "azurerm_subscription" "current" {}
 #############################################################################
 
 provider "azurerm" {
-  version = "~> 1.0"
+  # version = "~> 1.0"
 }
 
 provider "azuread" {
@@ -50,6 +50,15 @@ provider "azuread" {
 #############################################################################
 
 ## NETWORKING ##
+
+resource "azurerm_resource_group" "sec"{
+  name=var.sec_resource_group_name
+  location = var.location
+
+  tags = {
+    environment = "security"
+  }
+}
 
 module "vnet-sec" {
   source              = "Azure/vnet/azurerm"

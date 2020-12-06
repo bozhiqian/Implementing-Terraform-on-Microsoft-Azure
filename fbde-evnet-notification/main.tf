@@ -5,6 +5,11 @@
 
 provider "azurerm" {
   #version = "~> 1.0"
+  subscription_id = var.sec_sub_id
+  client_id       = var.sec_client_id
+  client_secret   = var.sec_client_secret
+  skip_provider_registration  = true
+  skip_credentials_validation = true
   features {}
 }
 
@@ -16,7 +21,7 @@ data "azurerm_client_config" "current" {}
 ##################################################################################
 
 resource "azurerm_resource_group" "setup" {
-  name     = var.resource_group_name
+  name     = "${var.resource_group_name}-${terraform.workspace}"
   location = var.location
 }
 

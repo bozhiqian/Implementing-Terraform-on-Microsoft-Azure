@@ -26,3 +26,16 @@ variable "storage_queue_name" {
 variable "virtual_network_subnet_ids"{
     type = list
 }
+
+
+variable "sec_sub_id" {
+  type = string
+}
+
+variable "sec_client_id" {
+  type = string
+}
+
+variable "sec_client_secret" {
+  type = string
+}
